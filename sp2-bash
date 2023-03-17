@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo docker kill $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)
+sudo docker kill $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)
+sudo docker system prune -f
+sudo docker build -t sp2d .
+sudo docker images
+sudo docker run -d -p 9000:8080 --name sp2d sp2d
+sudo docker ps
+
